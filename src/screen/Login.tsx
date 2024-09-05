@@ -27,6 +27,7 @@ function Login() {
         justify="space-around"
         align="center"
         gap={40}>
+          {/* {Falta ver el evento del svg para agrandar los ico */}
           <Input
             placeholder="Id o Correo"
             maxLength={30}
@@ -38,7 +39,7 @@ function Login() {
           <Checkbox>Recuerdame</Checkbox>
           <a href="#">¿ olvidaste tu contraseña ?</a>
           <section style={flexByButtons}>
-
+          {/* {Falta agregar los botones */}
           </section>
         </Flex>
       </Col>      

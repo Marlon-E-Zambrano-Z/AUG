@@ -1,49 +1,62 @@
-import { 
+import {
+  Button,
   Col,
   Checkbox,
   Flex, 
   Input,
   Row } from "antd"
+import { FaUserCircle as SignInIcon } from "react-icons/fa"
+import { inputStyleLogin as inputStyle } from "../css/Login.ts"
+
+import { useEffect } from "react"
 
 function Login() {
-
-  const gradient : React.CSSProperties = {backgroundColor:"linear-gradient(to bottom right, #f00, #00f)"}
-  const flexByButtons : React.CSSProperties = {
-    display:"flex",
-    flexDirection:"row",
-    justifyContent:"space-around",
-    alignItems:"center",
-    gap:"medium"
-  }
+  /*
+  Esta vista se hace con el objeto de que el usuario 
+  inicie sesion o se registre, ademas de que puede 
+  recuperar contraseña o tenerla guardada con la opcion
+  de recordar contraseña
+   */
+  useEffect(() => {
+    document.body.style.background = "linear-gradient(to bottom right, #f00, #00f)"
+    document.body.style.minHeight = "100vh"
+  }, [])
   
   return (
-    <Row 
-    gutter={8} 
-    style={gradient}>
-      <Col span={8}/>
-      <Col span={8}>
+    <Row gutter={8}>
+      <Col span={6}/>
+      <Col span={12}>
         <Flex
         vertical={true}
-        justify="space-around"
-        align="center"
-        gap={40}>
-          {/* {Falta ver el evento del svg para agrandar los ico */}
+        justify="space-evenly"
+        align="center"        
+        gap="large">
+          <SignInIcon
+          size={100}
+          />
           <Input
             placeholder="Id o Correo"
-            maxLength={30}
-            size="middle"
-            variant="outlined" />
+            maxLength={50}
+            size="large"
+            style={inputStyle}
+            variant="borderless" />
           <Input.Password
-            placeholder="contraseña"
-          />
+            size="large"
+            variant="borderless"
+            style={inputStyle}
+            placeholder="contraseña" />
           <Checkbox>Recuerdame</Checkbox>
           <a href="#">¿ olvidaste tu contraseña ?</a>
-          <section style={flexByButtons}>
-          {/* {Falta agregar los botones */}
-          </section>
+          <Flex
+          justify="space-around"
+          align="center"
+          gap="large">
+            <Button type="primary">Iniciar sesion</Button>
+            <Button type="primary">Registrarse</Button>
+          </Flex>
         </Flex>
       </Col>      
-      <Col span={8}/>
+      <Col span={6}/>
     </Row>
   )
 }

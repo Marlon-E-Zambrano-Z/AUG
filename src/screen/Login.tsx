@@ -72,7 +72,7 @@ function Login() {
         gap="large">
           <SignInIcon
           size={100}
-          fill="#fff"
+          fill={WHITE_LIGHT}
           />
           <Input
             autoFocus

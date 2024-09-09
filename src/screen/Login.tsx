@@ -15,6 +15,8 @@ import {
   WHITE_TRANSPARENT, 
   } from "../css/Colors.ts"
 
+import * as global from "../utils/Body.ts"
+
 import { FaUserCircle as SignInIcon } from "react-icons/fa"
 
 import { useEffect } from "react"
@@ -34,8 +36,8 @@ function Login() {
     Se agregan propiedades que son globales pero son 
     necesarias para una visualizacion correcta
     */
-    document.body.style.background = "linear-gradient(to bottom right, #f00, #00f)"
-    document.body.style.minHeight = "100vh"
+    global.setBackgroundGradientDiagonal("#f00","#00f")
+    global.setMinHeight("100vh")
   }, [])
 
   return (

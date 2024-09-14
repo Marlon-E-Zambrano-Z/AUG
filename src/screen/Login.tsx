@@ -10,6 +10,7 @@ import {
 
 import { 
   BLUE_LIGHT, 
+  RED_LIGHT, 
   TRANSPARENT,
   WHITE_LIGHT, 
   WHITE_TRANSPARENT, 
@@ -21,7 +22,9 @@ import { FaUserCircle as SignInIcon } from "react-icons/fa"
 
 import { useEffect } from "react"
 
-function Login() {
+//Axios para hacer peticiones para conectar la logica del fronted con backend
+
+export default function Login() {
   /*
   Esta vista se hace con el objeto de que el usuario 
   inicie sesion o se registre, ademas de que puede 
@@ -29,14 +32,12 @@ function Login() {
   de recordar contraseña
    */
 
-  
-
   useEffect(() => {
     /*
     Se agregan propiedades que son globales pero son 
     necesarias para una visualizacion correcta
     */
-    global.setBackgroundGradientDiagonal("#f00","#00f")
+    global.setBackgroundGradientDiagonal(RED_LIGHT,BLUE_LIGHT)
     global.setMinHeight("100vh")
   }, [])
 
@@ -108,5 +109,3 @@ function Login() {
     </ConfigProvider>
   )
 }
-
-export default Login;

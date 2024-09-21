@@ -1,0 +1,53 @@
+@startuml diagramaClases
+
+interface Usuario{
+  - number id
+  - string nombres
+  - string descripcion 
+  - string correo
+  - string contraseña
+  - date fechaRegistro
+  - date fechaNacimiento
+  - boolean genero
+}
+
+enum EnumPermisos{
+  CREAR, 
+  LEER, 
+  ACTUALIZAR, 
+  ELIMINAR
+}
+
+class Admin{
+  - number id
+  - string nombre
+  - string contraseña
+}
+Admin "1" --> "*" EnumPermisos : Tiene todos
+Admin "1" --> "*" Aprendiz : verifica datos
+
+class Asesor implements Usuario{
+  - boolean estado
+  - string ocupacion
+  - date[] disponible
+}
+Asesor "1" --> "*" Aprendiz : Tiene
+Asesor "1" --> "*" Compentencia : Tiene
+
+class Aprendiz implements Usuario{
+}
+Aprendiz "1" --> "1" Categoria : Tiene 
+Aprendiz "1" --> "1" Asesor : Tiene
+Aprendiz "1" --> "2" EnumPermisos : L, A
+class Categoria{
+  - number id
+  - string nombre
+}
+
+class Compentencia {
+  - number id
+  - string nombre
+  - string descripcion
+}
+Compentencia "1" --> "*" Asesor
+@enduml

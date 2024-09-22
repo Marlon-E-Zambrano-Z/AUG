@@ -20,7 +20,7 @@ import * as global from "../utils/Body.ts"
 
 import { FaUserCircle as SignInIcon } from "react-icons/fa"
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 //Axios para hacer peticiones para conectar la logica del fronted con backend
 
@@ -40,6 +40,17 @@ export default function Login() {
     global.setBackgroundGradientDiagonal(RED_LIGHT,BLUE_LIGHT)
     global.setMinHeight("100vh")
   }, [])
+
+  const [idEmail, setIdEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [rememberMe, setRememberMe] = useState<boolean>(false);
+
+
+  // const handlerSignIn = () => {
+  //   if(!rememberMe){
+      
+  //   }
+  // }
 
   return (
     <ConfigProvider
@@ -78,18 +89,18 @@ export default function Login() {
           fill={WHITE_LIGHT}
           />
           <Input
+            onChange={ event => setIdEmail(event.target.value) }
             autoFocus
             placeholder="Id o Correo"
             maxLength={50}
             size="large"
-            className="inputSignIn"
             variant="borderless" />
           <Input.Password
+          onChange={ event => setIdEmail(event.target.value) }
             size="large"
             variant="borderless"
-            className="inputSignIn"
             placeholder="contraseña" />
-          <Checkbox>Recuerdame</Checkbox>
+          <Checkbox checked={rememberMe}>Recuerdame</Checkbox>
           <Button 
             type="link" 
             href="#">

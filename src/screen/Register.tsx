@@ -1,6 +1,7 @@
 import {
   Button,
   Col,
+  DatePicker,
   Input,
   Row,
   Select 
@@ -53,12 +54,21 @@ export default function Register (){
         variant='borderless'
         maxLength={50}
         />
-        {!isLeaner ? <Input.TextArea 
-        placeholder='Ingrese su presentación, ¿Donde estudio?, ¿Donde ha trabajado?, ¿Cuantos años tiene de experiencia?' 
+        <Input.Password 
+        variant='borderless' 
+        size='large' 
+        placeholder='Ingrese una contraseña válida'/>
+        <Input.Password 
+        variant='borderless' 
+        size='large' 
+        placeholder='Ingrese de nuevo la contraseña para confirmación'/>
+        <Input.TextArea 
+        placeholder={'Ingrese su presentación,' + isLeaner ? 
+          '¿Donde has estudiado? ¿Cuales son las asignaturas que más te gustan?, ¿Cuales son tus hobbies?... entre otras que consideres' : 
+          '¿Donde estudio?, ¿Donde ha trabajado?, ¿Cuantos años tiene de experiencia?... entre otras que considere necesarias'} 
         size='large'
         variant='borderless'
-        maxLength={150}/> : null
-        }
+        maxLength={300}/> : null
         {!isLeaner ? <Input
         placeholder='Ingrese su ocupación'
         size='large'
@@ -75,6 +85,15 @@ export default function Register (){
           ]}
         /> : null
         }
+        <DatePicker/>
+        <Select
+        allowClear
+        placeholder="Seleccione su género biológico"
+        options={[
+            {value:true, label:"Masculino"},
+            {value:false, label:"femenino"}
+          ]}
+        />
         <Button>Registrarme</Button>
       </Col>
       <Col span={4}></Col>

@@ -8,13 +8,9 @@ import {
   Row
   } from "antd"
 
-import { 
-  BLUE_LIGHT, 
-  RED_LIGHT, 
-  TRANSPARENT,
-  WHITE_LIGHT, 
-  WHITE_TRANSPARENT, 
-  } from "../css/Colors.ts"
+import {textfield, checkbox, button} from '../css/config_provider.ts'
+
+import { RED_LIGHT, BLUE_LIGHT, WHITE_LIGHT } from "../css/Colors.ts"
 
 import * as global from "../utils/Body.ts"
 
@@ -56,23 +52,9 @@ export default function Login() {
     <ConfigProvider
     theme={{
       components : {
-        Input : {
-          colorTextPlaceholder : WHITE_TRANSPARENT,
-          colorText : WHITE_LIGHT,
-          colorIcon : WHITE_TRANSPARENT,
-          colorIconHover : WHITE_LIGHT
-        },
-        Checkbox : {
-          colorText : WHITE_LIGHT
-        },
-        Button : {
-          defaultBg : TRANSPARENT,
-          colorText : WHITE_LIGHT,
-          defaultGhostBorderColor : TRANSPARENT,
-          defaultGhostColor : TRANSPARENT,
-          defaultHoverBorderColor : BLUE_LIGHT,
-          defaultHoverColor : BLUE_LIGHT
-        }
+        Input : textfield,
+        Checkbox : checkbox,
+        Button : button
       },
     }}
     >

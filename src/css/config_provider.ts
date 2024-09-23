@@ -10,22 +10,36 @@ Estos objetos son enviados al componente ConfigProvider en el login para cambiar
 estilos especificos, es posible de igual manera reutilizarlos en donde sea conveniente
  */
 
-export const txf = {
+export const textfield = {
   colorTextPlaceholder : WHITE_TRANSPARENT,
   colorText : WHITE_LIGHT,
   colorIcon : WHITE_TRANSPARENT,
   colorIconHover : WHITE_LIGHT
 }
 
-export const chx = {
+export const checkbox = {
   colorText : WHITE_LIGHT
 }
 
-export const btn = {
+export const button = {
   defaultBg : TRANSPARENT,
   colorText : WHITE_LIGHT,
   defaultGhostBorderColor : TRANSPARENT,
   defaultGhostColor : TRANSPARENT,
   defaultHoverBorderColor : BLUE_LIGHT,
   defaultHoverColor : BLUE_LIGHT
+}
+
+export const combobox = {
+  activeBorderColor : TRANSPARENT,
+  activeOutlineCOlor : WHITE_LIGHT,
+  clearBg: TRANSPARENT,
+  selectorBg : TRANSPARENT,
+  colorTextPlaceholder : WHITE_TRANSPARENT
+}
+
+export const localtimeTextfield = {
+  colorTextPlaceholder: WHITE_TRANSPARENT,
+  colorBgContainer : TRANSPARENT,
+  cellActiveWithRangeBg : TRANSPARENT
 }

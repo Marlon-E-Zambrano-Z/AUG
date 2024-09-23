@@ -12,7 +12,7 @@ function App() {
         path="/"
         element={
         <h1 style={{overflow:"hidden"}}>
-          Esta es la raíz por ahora no se toca podría ir una landing page
+          Esta es la raíz por ahora no se toca. Podría ir una landing page
         </h1>}/>
         
         <Route 

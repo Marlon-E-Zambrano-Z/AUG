@@ -25,7 +25,6 @@ function App() {
         element={<Register/>}
         />
 
-
       </Routes>
     </BrowserRouter>
   )

@@ -8,6 +8,13 @@ function App() {
     <BrowserRouter>
       <Routes>
         
+        <Route
+        path="/"
+        element={
+        <h1 style={{overflow:"hidden"}}>
+          Esta es la raíz por ahora no se toca podría ir una landing page
+        </h1>}/>
+        
         <Route 
         path="/login" 
         element={<Login/>}
@@ -17,6 +24,7 @@ function App() {
         path="/register"
         element={<Register/>}
         />
+
 
       </Routes>
     </BrowserRouter>

@@ -35,11 +35,16 @@ export const combobox = {
   activeOutlineCOlor : WHITE_LIGHT,
   clearBg: TRANSPARENT,
   selectorBg : TRANSPARENT,
-  colorTextPlaceholder : WHITE_TRANSPARENT
+  colorTextPlaceholder : WHITE_TRANSPARENT,
+  optionSelectedColor : WHITE_LIGHT
 }
 
 export const localtimeTextfield = {
   colorTextPlaceholder: WHITE_TRANSPARENT,
   colorBgContainer : TRANSPARENT,
-  cellActiveWithRangeBg : TRANSPARENT
+  cellActiveWithRangeBg : TRANSPARENT,
+  colorFillTertiary: WHITE_LIGHT,
+  colorFillSecondary : WHITE_LIGHT,
+  colorIcon : WHITE_LIGHT,
+  colorIconHover : WHITE_LIGHT
 }

@@ -8,18 +8,19 @@ import {
   Row
   } from "antd"
 
-import { 
-  BLUE_LIGHT, 
-  TRANSPARENT,
-  WHITE_LIGHT, 
-  WHITE_TRANSPARENT, 
-  } from "../css/Colors.ts"
+import {textfield, checkbox, button} from '../../css/config_provider.ts'
+
+import { RED_LIGHT, BLUE_LIGHT, WHITE_LIGHT } from "../../css/Colors.ts"
+
+import * as global from "../../utils/Body.ts"
 
 import { FaUserCircle as SignInIcon } from "react-icons/fa"
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
-function Login() {
+//Axios para hacer peticiones para conectar la logica del fronted con backend
+
+export default function Login() {
   /*
   Esta vista se hace con el objeto de que el usuario 
   inicie sesion o se registre, ademas de que puede 
@@ -27,38 +28,33 @@ function Login() {
   de recordar contraseña
    */
 
-  
-
   useEffect(() => {
     /*
     Se agregan propiedades que son globales pero son 
     necesarias para una visualizacion correcta
     */
-    document.body.style.background = "linear-gradient(to bottom right, #f00, #00f)"
-    document.body.style.minHeight = "100vh"
+    global.setBackgroundGradientDiagonal(RED_LIGHT,BLUE_LIGHT)
+    global.setMinHeight("100vh")
   }, [])
+
+  const [idEmail, setIdEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [rememberMe, setRememberMe] = useState<boolean>(false);
+
+
+  const handlerSignIn = () => {
+    if(!rememberMe){
+      
+    }
+  }
 
   return (
     <ConfigProvider
     theme={{
       components : {
-        Input : {
-          colorTextPlaceholder : WHITE_TRANSPARENT,
-          colorText : WHITE_LIGHT,
-          colorIcon : WHITE_TRANSPARENT,
-          colorIconHover : WHITE_LIGHT
-        },
-        Checkbox : {
-          colorText : WHITE_LIGHT
-        },
-        Button : {
-          defaultBg : TRANSPARENT,
-          colorText : WHITE_LIGHT,
-          defaultGhostBorderColor : TRANSPARENT,
-          defaultGhostColor : TRANSPARENT,
-          defaultHoverBorderColor : BLUE_LIGHT,
-          defaultHoverColor : BLUE_LIGHT
-        }
+        Input : textfield,
+        Checkbox : checkbox,
+        Button : button
       },
     }}
     >
@@ -75,18 +71,18 @@ function Login() {
           fill={WHITE_LIGHT}
           />
           <Input
+            onChange={ event => setIdEmail(event.target.value) }
             autoFocus
             placeholder="Id o Correo"
             maxLength={50}
             size="large"
-            className="inputSignIn"
             variant="borderless" />
           <Input.Password
+          onChange={ event => setPassword(event.target.value) }
             size="large"
             variant="borderless"
-            className="inputSignIn"
             placeholder="contraseña" />
-          <Checkbox>Recuerdame</Checkbox>
+          <Checkbox checked={rememberMe}>Recuerdame</Checkbox>
           <Button 
             type="link" 
             href="#">
@@ -106,5 +102,3 @@ function Login() {
     </ConfigProvider>
   )
 }
-
-export default Login;

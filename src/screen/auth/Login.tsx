@@ -8,11 +8,11 @@ import {
   Row
   } from "antd"
 
-import {textfield, checkbox, button} from '../css/config_provider.ts'
+import {textfield, checkbox, button} from '../../css/config_provider.ts'
 
-import { RED_LIGHT, BLUE_LIGHT, WHITE_LIGHT } from "../css/Colors.ts"
+import { RED_LIGHT, BLUE_LIGHT, WHITE_LIGHT } from "../../css/Colors.ts"
 
-import * as global from "../utils/Body.ts"
+import * as global from "../../utils/Body.ts"
 
 import { FaUserCircle as SignInIcon } from "react-icons/fa"
 
@@ -42,11 +42,11 @@ export default function Login() {
   const [rememberMe, setRememberMe] = useState<boolean>(false);
 
 
-  // const handlerSignIn = () => {
-  //   if(!rememberMe){
+  const handlerSignIn = () => {
+    if(!rememberMe){
       
-  //   }
-  // }
+    }
+  }
 
   return (
     <ConfigProvider
@@ -78,7 +78,7 @@ export default function Login() {
             size="large"
             variant="borderless" />
           <Input.Password
-          onChange={ event => setIdEmail(event.target.value) }
+          onChange={ event => setPassword(event.target.value) }
             size="large"
             variant="borderless"
             placeholder="contraseña" />

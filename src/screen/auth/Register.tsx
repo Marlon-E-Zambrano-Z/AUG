@@ -39,9 +39,9 @@ PARA Aprendiz
 
 export default function Register (){
   
-  const [isLeaner, setIsLearner] = useState< boolean | undefined >(undefined);
+  const [isLeaner, setIsLearner] = useState<string>("");
   
-  const handlerRenderUserForm  = (value : boolean | undefined)  => setIsLearner( value );
+  const handlerRenderUserForm  = (value : string)  => setIsLearner( value );
 
   useEffect(() => {
     /*
@@ -76,10 +76,11 @@ export default function Register (){
         autoFocus
         placeholder="Selecciona el rol "
         options={[
-          {value:true,label:"Aprendiz"},
-          {value:false,label:"Asesor"},
+          {value:"aprendiz",label:"Aprendiz"},
+          {value:"asesor",label:"Asesor"},
           ]}
-        onChange={e => handlerRenderUserForm(e.target.value)}/>
+        onClear={() => setIsLearner("")}
+        onSelect={e => handlerRenderUserForm(e.target.value)}/>
         <Input 
         placeholder='Ingrese su nombre'
         size='large'
@@ -101,21 +102,23 @@ export default function Register (){
         size='large' 
         placeholder='Ingrese de nuevo la contraseña para confirmación'/>
         <Input.TextArea 
-        placeholder={'Ingrese su presentación,' + isLeaner ? 
-          '¿Donde has estudiado? ¿Cuales son las asignaturas que más te gustan?, ¿Cuales son tus hobbies?... entre otras que consideres' : 
-          '¿Donde estudio?, ¿Donde ha trabajado?, ¿Cuantos años tiene de experiencia?... entre otras que considere necesarias'} 
+        placeholder={'Ingrese su presentación' + 
+          isLeaner === "aprendiz" ? 
+          ', ¿Donde has estudiado? ¿Cuales son las asignaturas que más te gustan?, ¿Cuales son tus hobbies?... entre otras que consideres' 
+          : isLeaner === "asesor" ? 
+          ', ¿Donde estudio?, ¿Donde ha trabajado?, ¿Cuantos años tiene de experiencia?... entre otras que considere necesarias' : ""} 
         size='large'
         variant='borderless'
         maxLength={300}/>
         
-          {!isLeaner ? <Input
+          {isLeaner === "asesor" ? <Input
           placeholder='Ingrese su ocupación'
           size='large'
           variant='borderless'
           maxLength={50}
           /> : ""
           }
-          {!isLeaner ? <Select
+          {isLeaner === "asesor" ? <Select
           allowClear
           placeholder="Selecciona la categoria"
           options={[

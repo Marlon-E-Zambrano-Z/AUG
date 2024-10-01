@@ -1,0 +1,8 @@
+fastapi==0.115.0 #api de uso
+fastapi-camelcase==2.0.0 #variables de camello
+python-dotenv==1.0.1 #variables de entorno
+uvicorn==0.30.6 #manejo del servidor
+SQLAlchemy==2.0.35 #manejo de la bd
+SQLAlchemy-Utils==0.41.2
+psycopg2==2.9.9 #adaptador de la bd
+psycopg2-binary==2.9.9 #Version binaria

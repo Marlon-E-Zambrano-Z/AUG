@@ -1,6 +1,7 @@
 from .IUser import IUser
 from .EPermission import EPermision
 from .Learner import Learner
+from .Proficiency import Proficiency
 
 from datetime import datetime
 from typing import List, Union
@@ -19,6 +20,7 @@ class Adviser(IUser):
         self.__state: bool = True
         self.occupation = props.get('occupation')
         self.__permission : tuple = (EPermision.READ, EPermision.UPDATE)
+        self.__proficiency : List[Proficiency]= []
         self.__classroom : List[Learner] = None 
         self.__availabilities: List[datetime] = props.get('availabilities')
     
@@ -41,6 +43,16 @@ class Adviser(IUser):
     @property
     def permission(self) -> tuple:
         return self.__permission
+    
+    @property
+    def proficiency(self) -> List[Proficiency]:
+        return self.__proficiency
+  
+    def addProficiency(self, profi: Proficiency):
+        self.__proficiency.append(profi)
+    
+    def removeProficiency(self, index: int):
+        del self.__proficiency[index]
     
     @property
     def classroom(self) -> Learner | List[Learner]:

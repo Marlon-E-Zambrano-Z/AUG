@@ -53,5 +53,4 @@ class Compentencia {
   - string nombre
   - string descripcion
 }
-Compentencia "1" --> "*" Asesor
 @enduml

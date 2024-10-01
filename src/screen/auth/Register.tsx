@@ -18,7 +18,7 @@ import {
 
 import * as global from "../../utils/Body.ts"
 
-import { RED_LIGHT, BLUE_LIGHT } from '../../css/Colors';
+import { RED_LIGHT, BLUE_LIGHT } from '../../css/Colors.ts';
 
 import { useEffect, useState } from 'react'
 /*

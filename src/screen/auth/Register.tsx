@@ -14,11 +14,11 @@ import {
   combobox, 
   localtimeTextfield,
   textfield
-} from '../css/config_provider.ts';
+} from '../../css/config_provider.ts';
 
-import * as global from "./../utils/Body.ts"
+import * as global from "../../utils/Body.ts"
 
-import { RED_LIGHT, BLUE_LIGHT } from '../css/Colors';
+import { RED_LIGHT, BLUE_LIGHT } from '../../css/Colors';
 
 import { useEffect, useState } from 'react'
 /*

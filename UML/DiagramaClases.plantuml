@@ -11,7 +11,7 @@ interface Usuario{
   - boolean genero
 }
 
-enum EnumPermisos{
+enum Permisos{
   CREAR, 
   LEER, 
   ACTUALIZAR, 
@@ -23,26 +23,30 @@ class Admin{
   - string nombre
   - string contraseña
 }
-Admin "1" --> "*" EnumPermisos : Tiene todos
-Admin "1" --> "*" Aprendiz : verifica datos
+Admin "1" --> "*" Permisos: all
+Admin "1" --> "*" Aprendiz
 
 class Asesor implements Usuario{
   - boolean estado
   - string ocupacion
   - date[] disponible
 }
-Asesor "1" --> "*" Aprendiz : Tiene
-Asesor "1" --> "*" Compentencia : Tiene
+Asesor "1" --o "*" Aprendiz
+Asesor "1" --> "*" Compentencia 
+Asesor "1" --> "2" Permisos : L, A
 
 class Aprendiz implements Usuario{
+  - boolean pago
 }
-Aprendiz "1" --> "1" Categoria : Tiene 
-Aprendiz "1" --> "1" Asesor : Tiene
-Aprendiz "1" --> "2" EnumPermisos : L, A
+Aprendiz "1" --> "1" Categoria  
+Aprendiz "1" --o "1" Asesor
+Aprendiz "1" --> "2" Permisos : L, A
+
 class Categoria{
   - number id
   - string nombre
 }
+Categoria "1" --> "*" Compentencia
 
 class Compentencia {
   - number id

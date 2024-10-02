@@ -8,6 +8,8 @@ import {
   Row
   } from "antd"
 
+import { useNavigate } from "react-router-dom"
+
 import {textfield, checkbox, button} from '../../css/config_provider.ts'
 
 import { RED_LIGHT, BLUE_LIGHT, WHITE_LIGHT } from "../../css/Colors.ts"
@@ -17,6 +19,7 @@ import * as global from "../../utils/Body.ts"
 import { FaUserCircle as SignInIcon } from "react-icons/fa"
 
 import { useEffect, useState } from "react"
+import { sendCredentials } from "../../services/login.ts"
 
 //Axios para hacer peticiones para conectar la logica del fronted con backend
 
@@ -37,16 +40,31 @@ export default function Login() {
     global.setMinHeight("100vh")
   }, [])
 
+  const navigate = useNavigate();
   const [idEmail, setIdEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [rememberMe, setRememberMe] = useState<boolean>(false);
 
 
-  const handlerSignIn = () => {
-    if(!rememberMe){
-      
+  const handlerSignIn = async () => {
+    if(rememberMe){
+      localStorage.setItem('userEmail', idEmail);
+    localStorage.setItem('userPassword', password);  // Idealmente, deberías guardar un hash en lugar de la contraseña en texto plano
+
+    const response = await sendCredentials(idEmail, password);
+
+    if (response.status) {
+      navigate('/match');
+    }
+  }else{
+    const response = await sendCredentials(idEmail, password)
+    if(response.status){
+      navigate('/match')
+    }
     }
   }
+  
+  const handlerRememberMe = () => setRememberMe(!rememberMe)
 
   return (
     <ConfigProvider
@@ -82,7 +100,9 @@ export default function Login() {
             size="large"
             variant="borderless"
             placeholder="contraseña" />
-          <Checkbox checked={rememberMe}>Recuerdame</Checkbox>
+          <Checkbox 
+          checked={rememberMe}
+          onChange={() => handlerRememberMe}>Recuerdame</Checkbox>
           <Button 
             type="link" 
             href="#">
@@ -92,7 +112,7 @@ export default function Login() {
           justify="space-around"
           align="center"
           gap="large">
-            <Button>Inicia sesion</Button>
+            <Button onClick={() => handlerSignIn}>Inicia sesion</Button>
             <Button>Registrate</Button>
           </Flex>
         </Flex>

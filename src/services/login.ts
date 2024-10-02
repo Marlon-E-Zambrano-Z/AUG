@@ -18,7 +18,7 @@ Salidas
       de lo contrario sí es un mensaje este sería un string
     * status: un booleano que define sí la respuesta tuvo problemas o no, su valor depende de ello
 */
-export const sendCredentials : object = async (idEmail : string, password: string) => {
+export const sendCredentials = async (idEmail : string, password: string) => {
   try{
   const SALT = bcrypt.genSaltSync(10) 
   const HASHED_PASSWD : string = bcrypt.hashSync(password, SALT)

@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./screen/auth/Login.tsx";
 import Register from "./screen/auth/Register.tsx";
+import Match from "./screen/Match.tsx";
+import RecoverPassword from "./screen/auth/RecoverPassword.tsx";
 
 function App() {
   
@@ -8,21 +10,24 @@ function App() {
     <BrowserRouter>
       <Routes>
         
-        <Route
-        path="/"
-        element={
-        <h1 style={{overflow:"hidden"}}>
-          Esta es la raíz por ahora no se toca. Podría ir una landing page
-        </h1>}/>
-        
         <Route 
-        path="/login" 
+        path="/" 
         element={<Login/>}
         />
     
         <Route
         path="/register"
         element={<Register/>}
+        />
+
+        <Route
+        path="/match"
+        element={<Match/>}
+        />
+
+        <Route
+        path="/recover_password"
+        element={<RecoverPassword/>}
         />
 
       </Routes>

@@ -5,4 +5,6 @@ uvicorn==0.30.6 #manejo del servidor
 SQLAlchemy==2.0.35 #manejo de la bd
 SQLAlchemy-Utils==0.41.2
 psycopg2==2.9.9 #adaptador de la bd
-psycopg2-binary==2.9.9 #Version binaria
+psycopg2-binary==2.9.9 #Version binari
+
+#http://localhost:5000/dev-docs

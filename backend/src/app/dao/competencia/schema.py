@@ -1,8 +1,8 @@
 from pydantic import BaseModel
-from humps import camelize
+#from humps import case
 
 def to_camel(string):
-    return camelize(string)
+    return case(string)
 
 class Competences(BaseModel):
     id_competencia: int

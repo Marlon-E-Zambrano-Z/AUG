@@ -38,7 +38,7 @@ def create_admin(admin_data: AdministratorCreate, db: Session = Depends(db_sessi
         db = db_session()
         # Verificar si el correo electrónico ya existe en la base de datos
         #if is_email_exist(db, Administrador.email):
-         #   raise ValueError(f"El correo '{Administrador.email}' ya se encuentra registrado")
+        #   raise ValueError(f"El correo '{Administrador.email}' ya se encuentra registrado")
 
         # Crear el administrador utilizando el CRUD
         new_admin = crud.create_admin(db=db, admin_data=admin_data)

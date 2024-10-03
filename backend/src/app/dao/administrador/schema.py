@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel  
 #from humps import camelize
 from typing import Optional
 
@@ -23,4 +23,19 @@ class Administrators(BaseModel):
     email: str
     contraseña: str
     permisos: int
+
+class AdministratorUpdate(BaseModel):
+    id_admin: int
+    nombres: str
+    email: str
+    contraseña: str
+    permisos: int
+
+
+
+
+    class Config:
+        orm_mode = True
+
+
 

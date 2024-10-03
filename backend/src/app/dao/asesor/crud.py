@@ -18,7 +18,7 @@ def create_advirser(db: Session, adviser_data: Advisers):
         disponibilidad=adviser_data.disponibilidad,
         fecha_registro=adviser_data.fecha_registro,
         genero=adviser_data.genero,
-        contraseña=adviser_data.contraseña
+    
 
     )
     db.add(asesor)

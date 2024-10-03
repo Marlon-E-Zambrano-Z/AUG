@@ -6,7 +6,7 @@ def db_engine():
     """
     Crea la conexión a la base de datos
     """
-    pg_dsn = "postgresql://postgres:1234@postgres:5432/AUG"
+    pg_dsn = "postgresql://postgres:1234@localhost:5432/AUG"
     return create_engine(pg_dsn)
 
 

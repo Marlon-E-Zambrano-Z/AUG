@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./screen/auth/Login.tsx";
-import Register from "./screen/auth/Register.tsx";
+import AdviserRegister from "./screen/auth/AdviserRegister.tsx";
+import LearnerRegister from "./screen/auth/LearnerRegister.tsx";
 import Match from "./screen/Match.tsx";
-import RecoverPassword from "./screen/auth/RecoverPassword.tsx";
+import RecoverPassword from "./screen/auth/PasswordRecovery.tsx";
+import LandingPage from "./screen/LandingPage.tsx";
 
 function App() {
   
@@ -12,21 +14,31 @@ function App() {
         
         <Route 
         path="/" 
+        element={<LandingPage/>}
+        />
+        
+        <Route 
+        path="/gestor_de_sesion" 
         element={<Login/>}
         />
     
         <Route
-        path="/register"
-        element={<Register/>}
+        path="/registro/aprendiz"
+        element={<LearnerRegister/>}
         />
 
         <Route
-        path="/match"
+        path="/registro/asesor"
+        element={<AdviserRegister/>}
+        />
+
+        <Route
+        path="/emparejamiento"
         element={<Match/>}
         />
 
         <Route
-        path="/recover_password"
+        path="/recuperar_contrasena"
         element={<RecoverPassword/>}
         />
 

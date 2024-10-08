@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Input, Button, Radio, Row, Col, Card } from 'antd';
+import { Form, Button, Radio, Row, Col, Card } from 'antd';
 import { UserOutlined, SolutionOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 
@@ -54,30 +54,10 @@ const UserSelectionForm: React.FC = () => {
               </Radio.Group>
             </Form.Item>
 
-            {/* Input de correo electrónico */}
-            <Form.Item
-              label="Correo electrónico"
-              name="email"
-              rules={[
-                { required: true, message: 'Por favor ingresa tu correo.' },
-                { type: 'email', message: 'El correo no es válido.' }
-              ]}
-            >
-              <Input placeholder="Ingresa tu correo" />
-            </Form.Item>
-
-            {/* Input de contraseña */}
-            <Form.Item
-              label="Contraseña"
-              name="password"
-              rules={[{ required: true, message: 'Por favor ingresa tu contraseña.' }]}
-            >
-              <Input.Password placeholder="Ingresa tu contraseña" />
-            </Form.Item>
-
             {/* Botón de envío */}
             <Form.Item>
-              <Button type="primary" htmlType="submit" block>
+              <Button type="primary" htmlType="submit" block style={{color:"var(--secondary-color)",
+    backgroundColor:"var(--beich)"}}>
                 Continuar
               </Button>
             </Form.Item>

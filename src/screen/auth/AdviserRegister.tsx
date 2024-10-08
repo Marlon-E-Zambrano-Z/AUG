@@ -150,10 +150,10 @@ const RegisterForm: React.FC = () => {
             <Form.Item
               label="Presentación"
               name="comments"
-              rules={[{ required: true, message: 'Por favor escribe tus comentarios.' }]}
+              rules={[{ required: true, message: 'Cuentenos por favor en que trabaja' }]}
             >
               <TextArea
-                placeholder="Escribe aquí tus comentarios"
+                placeholder="Cuentenos por favor sobre su trabajo"
                 maxLength={300}
                 rows={4}
               />
@@ -161,7 +161,7 @@ const RegisterForm: React.FC = () => {
 
             {/* Botón de envío */}
             <Form.Item>
-              <Button type="primary" htmlType="submit" block>
+              <Button type="primary" htmlType="submit" block style={{color:"var(--secondary-color)",backgroundColor:"var(--beich)"}}>
                 Registrarse
               </Button>
             </Form.Item>

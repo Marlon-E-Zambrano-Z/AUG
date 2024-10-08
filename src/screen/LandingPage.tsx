@@ -30,11 +30,11 @@ export default function LandingPage(): JSX.Element {
         <div className="columns">
           <div className="column left-column">Columna Izquierda</div>
           <div className="column center-column">
-            <h2>Bienvenido a Asesoria Global</h2>
+            <h2>Bienvenido a expertia</h2>
             <p>
-            ¡Nos complace darte la bienvenida a Asesoria Global! Tu plataforma ideal para conectar a aprendices y asesores de manera efectiva y sencilla.
+            ¡Nos complace darte la bienvenida a expertia! Tu plataforma ideal para conectar a aprendices y asesores de manera efectiva y sencilla.
 
-            En un mundo donde el aprendizaje y la formación continúan evolucionando, es fundamental contar con herramientas que faciliten la interacción y la colaboración. Asesoria Global está diseñada precisamente para eso. Aquí, creemos en el poder del conocimiento compartido y en la importancia de las relaciones que se forman a través de la mentoría y el aprendizaje colaborativo.
+            En un mundo donde el aprendizaje y la formación continúan evolucionando, es fundamental contar con herramientas que faciliten la interacción y la colaboración. expertia está diseñada precisamente para eso. Aquí, creemos en el poder del conocimiento compartido y en la importancia de las relaciones que se forman a través de la mentoría y el aprendizaje colaborativo.
             </p>
           </div>
           <div className="column right-column">Columna Derecha</div>

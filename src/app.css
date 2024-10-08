@@ -23,3 +23,78 @@
   border: 2px solid #1890ff;
   box-shadow: 0 4px 12px rgba(24, 144, 255, 0.2);
 }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--light-blue);
+  color: white;
+  padding: 10px 20px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.nav-button {
+  color: white;
+  margin-left: 10px; /* Espaciado más pequeño en móviles */
+}
+
+.pipe {
+  color: white;
+  margin: 0 5px; /* Espaciado más pequeño en móviles */
+}
+
+.content {
+  padding: 10px; /* Espaciado más pequeño en móviles */
+  display: flex;
+  flex-direction: column; /* Colocar columnas en vertical en móviles */
+  align-items: center; /* Centramos las columnas */
+}
+
+.columns {
+  display: flex;
+  flex-direction: column; /* Cambiar a vertical por defecto */
+  width: 100%;
+  max-width: 1200px;
+}
+
+.column {
+  padding: 10px; /* Espaciado más pequeño en móviles */
+  flex: 1;
+  border: 1px solid #e0e0e0;
+  margin: 5px 0; /* Espaciado vertical entre columnas */
+}
+
+/* Estilos para pantallas más grandes */
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row; /* Cambiar a horizontal en pantallas más grandes */
+  }
+
+  .columns {
+    flex-direction: row; /* Aseguramos que las columnas estén en fila */
+  }
+
+  .column {
+    margin: 5px; /* Espaciado horizontal entre columnas */
+  }
+
+  .center-column {
+    flex: 2; /* La columna central será más ancha */
+  }
+}
+
+.footer {
+  text-align: center;
+  background-color: #f0f2f5;
+  padding: 10px 0;
+}

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, Radio, Row, Col, Card } from 'antd';
 import { UserOutlined, SolutionOutlined } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
 
 const UserSelectionForm: React.FC = () => {
+  const navigate = useNavigate()
   const [selectedUserType, setSelectedUserType] = useState<string | null>(null);
 
   const onUserTypeChange = (e: any) => {
@@ -13,6 +15,7 @@ const UserSelectionForm: React.FC = () => {
     console.log('Formulario enviado:', values);
   };
 
+  
   return (
     <Row justify="center" style={{ padding: '20px' }}>
       <Col xs={24} sm={20} md={16} lg={12} xl={10}>
@@ -30,9 +33,9 @@ const UserSelectionForm: React.FC = () => {
                   <Col xs={24} md={12}>
                     <Card
                       hoverable
-                      onClick={() => setSelectedUserType('Aprendiz')}
+                      onClick={() => {navigate("/aprendiz");setSelectedUserType('Aprendiz')}}
                       className={selectedUserType === 'Aprendiz' ? 'selected-card' : ''}
-                      cover={<UserOutlined style={{ fontSize: '50px', color: '#1890ff', marginTop: '20px' }} />}
+                      cover={<UserOutlined style={{ fontSize: '50px', color: 'var(--light-blue)', marginTop: '20px' }} />}
                     >
                       <Card.Meta title="Aprendiz" description="Persona en proceso de aprendizaje" />
                     </Card>
@@ -40,9 +43,9 @@ const UserSelectionForm: React.FC = () => {
                   <Col xs={24} md={12}>
                     <Card
                       hoverable
-                      onClick={() => setSelectedUserType('Asesor')}
+                      onClick={() => {navigate("/asesor");setSelectedUserType('Asesor')}}
                       className={selectedUserType === 'Asesor' ? 'selected-card' : ''}
-                      cover={<SolutionOutlined style={{ fontSize: '50px', color: '#1890ff', marginTop: '20px' }} />}
+                      cover={<SolutionOutlined style={{ fontSize: '50px', color: 'var(--light-blue)', marginTop: '20px' }} />}
                     >
                       <Card.Meta title="Asesor" description="Persona que ofrece orientación o enseñanza" />
                     </Card>

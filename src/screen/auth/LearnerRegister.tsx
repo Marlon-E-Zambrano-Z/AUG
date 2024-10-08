@@ -2,7 +2,6 @@ import { Form, Input, Button, DatePicker, Row, Col } from 'antd';
 import dayjs from 'dayjs';
 import 'dayjs/locale/es';
 import locale from 'antd/es/date-picker/locale/es_ES';
-import './App.css';
 
 const { TextArea } = Input;
 

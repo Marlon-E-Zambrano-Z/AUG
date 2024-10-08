@@ -1,6 +1,15 @@
+:root{
+  --beich : #FFFB77;
+  --violet: #C35BA1;
+  --light-blue: #6C5EB1;
+  --primary-color: white;
+  --secondary-color: black;
+}
+
 html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
+

@@ -15,11 +15,21 @@ export default defineConfig({
     }
   },
   server:{
-    proxy:{
-      '/api':{
-        target:'http://localhost:3308',
+    proxy: {
+      '/api/v1': {
+        target: 'http://localhost:3308',
         changeOrigin: true,
-        rewrite: path => path.replace(/^\/api/, '')
+        rewrite: path => path.replace(/^\/api\/v1/, '')
+      },
+      '/api/v2': {
+        target: 'http://localhost:3308',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/api\/v2/, '')
+      },
+      '/auth': {
+        target: 'http://localhost:3308',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/auth/, '')
       }
     }
   }

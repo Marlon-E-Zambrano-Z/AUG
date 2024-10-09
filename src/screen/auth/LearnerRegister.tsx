@@ -118,7 +118,7 @@ export default function StudentRegister(){
 
             {/* Botón de envío */}
             <Form.Item>
-              <Button type="primary" htmlType="submit" block>
+              <Button type="primary" htmlType="submit" block style={{color:"var(--secondary-color)",backgroundColor:"var(--beich)"}}>
                 Registrarse
               </Button>
             </Form.Item>

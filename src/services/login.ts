@@ -26,13 +26,13 @@ interface CredentialsResponse {
 
 export const sendCredentials = async (idEmail: string, password: string): Promise<CredentialsResponse> => {
   try {
-    const SALT = bcrypt.genSaltSync(10); 
-    const HASHED_PASSWD: string = bcrypt.hashSync(password, SALT);
+    // const SALT = bcrypt.genSaltSync(10); 
+    // const HASHED_PASSWD: string = bcrypt.hashSync(password, SALT);
     
     // Realiza la solicitud POST y espera la respuesta
     const response = await axios.post("/auth", {
       idEmail,
-      password: HASHED_PASSWD,
+      password
     });
 
     // Si todo va bien, devuelve la respuesta esperada

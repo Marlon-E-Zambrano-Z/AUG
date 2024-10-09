@@ -18,7 +18,7 @@ export default function LandingPage(): JSX.Element {
           <Button 
           className="nav-button"
           style={buttonStyle}
-          onClick={() => navigate('/iniciar_sesion')}>Iniciar sesión</Button>
+          onClick={() => navigate('/inicio_sesion')}>Iniciar sesión</Button>
           <span className="pipe">|</span>
           <Button 
           className="nav-button" 
@@ -40,7 +40,7 @@ export default function LandingPage(): JSX.Element {
           <div className="column right-column">Columna Derecha</div>
         </div>
       </Content>
-      <Footer className="footer">© 2024 Jhon E. Montoya M. - Marlon E. Zambrano Z. Todos los derechos reservados.</Footer>
+      <Footer className="footer">© 2024 Expertia. Todos los derechos reservados.</Footer>
     </Layout>
     </>);
 };

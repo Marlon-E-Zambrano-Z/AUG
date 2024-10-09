@@ -33,7 +33,7 @@ const UserSelectionForm: React.FC = () => {
                   <Col xs={24} md={12}>
                     <Card
                       hoverable
-                      onClick={() => {navigate("/aprendiz");setSelectedUserType('Aprendiz')}}
+                      onClick={() => {navigate("/registro/aprendiz");setSelectedUserType('Aprendiz')}}
                       className={selectedUserType === 'Aprendiz' ? 'selected-card' : ''}
                       cover={<UserOutlined style={{ fontSize: '50px', color: 'var(--light-blue)', marginTop: '20px' }} />}
                     >
@@ -43,7 +43,7 @@ const UserSelectionForm: React.FC = () => {
                   <Col xs={24} md={12}>
                     <Card
                       hoverable
-                      onClick={() => {navigate("/asesor");setSelectedUserType('Asesor')}}
+                      onClick={() => {navigate("/registro/asesor");setSelectedUserType('Asesor')}}
                       className={selectedUserType === 'Asesor' ? 'selected-card' : ''}
                       cover={<SolutionOutlined style={{ fontSize: '50px', color: 'var(--light-blue)', marginTop: '20px' }} />}
                     >

@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import { sendCredentials } from '../../services/login.ts';
 import { Form, Input, Button, Checkbox, Row, Col, Modal } from 'antd';
-import './../../app.css';
 import { useState } from 'react';
+import './../../app.css';
 
 interface LoginFormValues {
   email: string;
@@ -100,9 +100,7 @@ export default function Login(){
 
             {/* Botón de envío */}
             <Form.Item>
-              <Button type="primary" htmlType="submit" block style={{
-    color:"var(--secondary-color)",
-    backgroundColor:"var(--beich)"
+              <Button type="primary" htmlType="submit" block style={{color:"var(--secondary-color)",backgroundColor:"var(--beich)"
   }}>
                 Iniciar sesión
               </Button>
@@ -111,8 +109,8 @@ export default function Login(){
             {/* Aviso de términos y políticas */}
             <div style={{ textAlign: 'center', fontSize: '14px', color: '#888' }}>
               Al continuar, aceptas nuestros{' '}
-              <a href="#" style={{ color: '#1890ff' }}>Términos de uso</a> y{' '}
-              <a href="#" style={{ color: '#1890ff' }}>Política de privacidad</a>.
+              <a href="#">Términos de uso</a> y{' '}
+              <a href="#">Política de privacidad</a>.
             </div>
           </Form>
         </div>

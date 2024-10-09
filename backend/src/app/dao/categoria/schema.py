@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from humps import camelize
+#from humps import camelize
 
 def to_camel(string):
     return camelize(string)

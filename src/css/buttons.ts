@@ -1,3 +1,3 @@
 export const tokenBtns = {
-  hoverBorderColor:"var(--light-blue)"
+  colorBgContainer:"var(--beich)"
 }
